@@ -28,7 +28,3 @@ app.listen(port)
 console.log("App is listening on port: " + port)
 
 
-// schema and model for database
-var Todo = mongoose.model('Todo', {
-	text: String
-})
