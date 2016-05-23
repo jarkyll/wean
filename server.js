@@ -12,7 +12,7 @@ mongoose.connect(database.url)
 // binding middleware
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev')) // log every request
-app.use(bodyParser.urlendcoded({'extended': 'true'}))// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({'extended': 'true'}))// parse application/x-www-form-urlencoded
 app.use(bodyParser.json())// parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json'}))// parse vnd.api
 

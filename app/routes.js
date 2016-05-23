@@ -3,7 +3,7 @@
 
 
 //load the Todo Model
-var Todo = require(".models/todo")
+var Todo = require("./models/todo")
 
 // export the routes
 /* routing accepts a single argument called app,
@@ -44,13 +44,12 @@ module.exports = function(app){
 				if(err)
 					res.send(err)
 				// success in deleting
-				Todo.find(function(err, todos))
+				Todo.find(function(err, todos){
 					if(err)
 						res.send(err)
 					res.send(todos)
-		})
+
+				})
+			})
 	})
-
-
-
 }
