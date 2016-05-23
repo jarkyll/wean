@@ -15,10 +15,20 @@
 			<!-- the -upvotes goes by descending, upvotes goes by ascending -->
 			<span ng-click="upvote(post)">^</span>
 			<span ng-click="downvote(post)">v</span>
-			{{ post.title }} - upvotes: {{ post.upvotes}}
+			<a ng-hide="!post.link" href="{{post.link}}">
+				{{ post.title }}
+			</a>
+			<span ng-show="!post.link">
+				{{ post.title }}
+			</span>
+			<!-- hide the above span if there is a post.link -->
+			 - upvotes: {{ post.upvotes}}
 		</div>
 		<form ng-submit="addPost()">
-			<input type="text" ng-model="title"></input>
+			<input type="text" placeholder="Text" ng-model="title"></input>
+			<br>
+			<input type="link" placeholder="Link" ng-model="link"></input>
+			<br>
 			<button type="submit">Post</button>
 		</form>
 

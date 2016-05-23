@@ -15,9 +15,10 @@ app.controller("MainCtrl", ["$scope", function($scope){
 		if(!$scope.title || $scope.title === ""){
 			return;
 		}
-		$scope.posts.push({title: $scope.title, upvotes: 0})
+		$scope.posts.push({title: $scope.title, link: $scope.link, upvotes: 0})
 		// make the input box aka $scope.title blank after submit
 		$scope.title = ""
+		$scope.link = ""
 	};
 
 	$scope.upvote = function(post){
